@@ -5,31 +5,29 @@ namespace PeaceApp.API.Communication.Domain.Model.Aggregate
 {
     public class Notification
     {
-        public int Id { get; set; }
-        private Message Message { get; set; }
+        public int Id { get; private set; }
+        public Message Message { get; private set; }
 
-        public Notification(string content)
+        public Notification()
         {
-            Message = new Message(content);
+            Message = new Message();
+        }
+        public Notification(string message)
+        {
+            Message = new Message(message);
         }
 
         public Notification(CreateNotificationCommand command)
         {
-            Message = new Message(command.Content);
+            Message = new Message(command.Message);
         }
+
         public void SetId(int id)
         {
             Id = id;
         }
 
-        public void UpdateMessage(string content)
-        {
-            Message = new Message(content);
-        }
-
-        public string GetMessage()
-        {
-            return Message.GetMessage();
-        }
+        public string GetMessage() => Message.Content;
+        public int GetId() => Id;
     }
 }
