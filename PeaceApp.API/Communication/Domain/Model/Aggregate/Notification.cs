@@ -1,28 +1,34 @@
 using PeaceApp.API.Communication.Domain.Model.ValueObjects;
+using PeaceApp.API.Communication.Domain.Model.Commands;
 
 namespace PeaceApp.API.Communication.Domain.Model.Aggregate
 {
     public class Notification
     {
-        public Message message { get; private set; }
+        private Message Message { get; set; }
 
-        public Notification(string message)
+        public Notification(string content)
         {
-            this.message = new Message(message);
+            Message = new Message(content);
+        }
+
+        public Notification(CreateNotificationCommand command)
+        {
+            Message = new Message(command.Content);
         }
 
         public Notification()
         {
         }
 
-        public void UpdateMessage(string message)
+        public void UpdateMessage(string content)
         {
-            this.message = new Message(message);
+            Message = new Message(content);
         }
 
         public string GetMessage()
         {
-            return message.GetMessage();
+            return Message.GetMessage();
         }
     }
 }

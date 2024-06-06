@@ -2,22 +2,22 @@ namespace PeaceApp.API.Communication.Domain.Model.ValueObjects
 {
     public record Message
     {
-        public string message { get; }
+        private string Content { get; }
 
         public Message() : this(string.Empty)
         {
         }
 
-        public Message(string message)
+        public Message(string Content)
         {
-            if (string.IsNullOrWhiteSpace(message))
+            if (string.IsNullOrWhiteSpace(Content))
             {
                 throw new ArgumentException("Message cannot be null or blank");
             }
 
-            this.message = message;
+            this.Content = Content;
         }
 
-        public string GetMessage() => message;
+        public string GetMessage() => Content;
     }
 }
