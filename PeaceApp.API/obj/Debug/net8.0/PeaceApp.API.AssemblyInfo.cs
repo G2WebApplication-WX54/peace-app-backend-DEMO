@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PeaceApp.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4785feed1e35cb175a0e580df9d8ec57daf76d90")]
 [assembly: System.Reflection.AssemblyProductAttribute("PeaceApp.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PeaceApp.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
