@@ -19,4 +19,24 @@
 
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Report\Application\Internal\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Report\Services\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Report\Services\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Report\Services\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Report\Services\**" />
+    </ItemGroup>
+
 </Project>

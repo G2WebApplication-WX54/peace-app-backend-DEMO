@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4PAisVKnxZn9/dK6GJtu1+zU6twMgAWeoo4Dc7jTA9w5tLVY4iUDHFCBRYpaJSqCx7HrdLLaLtbyMnArELQzzw==",
+  "dgSpecHash": "RmAqdXAKYt7Awz9eX0jOIK+oGpc9ONQWfRdcG372WKbaj87uMoh/MZuUlEpe6gzfgve8XRW8efxYIBmiH3w+hA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Janiel Franz\\Desktop\\UPC\\Desarrollo Web\\Trabajo\\peace-app\\PeaceApp.API\\PeaceApp.API.csproj",
+  "projectFilePath": "C:\\Users\\Janiel Franz\\Desktop\\UPC\\Desarrollo Web\\Trabajo\\peace-app-backend\\PeaceApp.API\\PeaceApp.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Janiel Franz\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\Janiel Franz\\.nuget\\packages\\entityframeworkcore.createdupdateddate\\8.0.0\\entityframeworkcore.createdupdateddate.8.0.0.nupkg.sha512",
