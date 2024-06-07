@@ -34,6 +34,17 @@ public class ReportsManagementController(
         var resource = ReportResourceFromEntityAssembler.ToResourceFromEntity(result);
         return Ok(resource);
     }
+    
+    [HttpGet("{kindOfReport}")]
+    public async Task<ActionResult> GetAllReportsByKindOfReport(string kindOfReport)
+    {
+        var getAllReportsByKindOfReportQuery = new GetAllReportsByKindOfReportQuery(kindOfReport);
+        var result = await reportManagementQueryService.Handle(getAllReportsByKindOfReportQuery);
+        var resources = result.Select(ReportResourceFromEntityAssembler.ToResourceFromEntity);
+        return Ok(resources);
+    }
+    
+    
     [HttpGet("{date}")]
     public  async Task<ActionResult> GetAllReportsByDate(string date)
     {
@@ -50,6 +61,8 @@ public class ReportsManagementController(
         var resources = result.Select(ReportResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(resources);
     }
+    
+    
     
     
 // Original
