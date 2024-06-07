@@ -7,7 +7,7 @@ namespace PeaceApp.API.Communication.Interfaces.REST.Transform
     {
         public static CreateNotificationCommand ToCommandFromResource(CreateNotificationResource resource)
         {
-            return new CreateNotificationCommand(resource.Content);
+            return new CreateNotificationCommand(resource.Content,resource.Priority);
         }
     }
 }

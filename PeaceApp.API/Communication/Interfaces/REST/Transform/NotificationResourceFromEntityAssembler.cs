@@ -7,7 +7,7 @@ namespace PeaceApp.API.Communication.Interfaces.REST.Transform
     {
         public static NotificationResource ToResource(Notification notification)
         {
-            return new NotificationResource(notification.GetId(), notification.GetMessage());
+            return new NotificationResource(notification.GetId(), notification.GetMessage(),notification.GetPriorityAsString());
         }
     }
 }
