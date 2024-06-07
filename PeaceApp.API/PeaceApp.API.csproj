@@ -20,10 +20,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Report\Application\Internal\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Compile Remove="Report\Services\**" />
     </ItemGroup>
 
