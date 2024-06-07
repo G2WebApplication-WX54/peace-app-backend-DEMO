@@ -1,7 +1,7 @@
 using PeaceApp.API.Report.Domain.Model.Aggregates;
-using PeaceApp.API.Report.Interfaces.Resources;
+using PeaceApp.API.Report.Interfaces.REST.Resources;
 
-namespace PeaceApp.API.Report.Interfaces.Transform;
+namespace PeaceApp.API.Report.Interfaces.REST.Transform;
 
 public static class ReportResourceFromEntityAssembler
 {
