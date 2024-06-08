@@ -21,18 +21,22 @@
 
     <ItemGroup>
       <Compile Remove="Report\Services\**" />
+      <Compile Remove="obj\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="Report\Services\**" />
+      <EmbeddedResource Remove="obj\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Content Remove="Report\Services\**" />
+      <Content Remove="obj\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Report\Services\**" />
+      <None Remove="obj\**" />
     </ItemGroup>
 
 </Project>
