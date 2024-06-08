@@ -1,6 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using PeaceApp.API.Report.Application.Internal.CommandServices;
+using PeaceApp.API.Report.Application.Internal.QueryServices;
+using PeaceApp.API.Report.Domain.Repositories;
+using PeaceApp.API.Report.Domain.Services;
+using PeaceApp.API.Report.Infrastructure.Persistance.EFC.Repositories;
+using PeaceApp.API.Shared.Domain.Repositories;
 using PeaceApp.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+using PeaceApp.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 using PeaceApp.API.Shared.Interfaces.ASP.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -60,11 +67,29 @@ builder.Services.AddSwaggerGen(
 // Configure Lowercase URLs
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
+// Configure Dependency Injections
+// Shared Bounded Context Injection Configuration
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Report Bounded Context Injection Configuration
+builder.Services.AddScoped<IReportManagementRepository, ReportManagementRepository>();
+builder.Services.AddScoped<IReportManagementCommandService, ReportManagementCommandService>();
+builder.Services.AddScoped<IReportManagementQueryService, ReportManagementQueryService>();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+// Verify Database objects are created
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<AppDbContext>();
+    context.Database.EnsureCreated();
+}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
