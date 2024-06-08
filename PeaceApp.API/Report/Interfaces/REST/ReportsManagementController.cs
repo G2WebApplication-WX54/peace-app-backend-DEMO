@@ -35,8 +35,8 @@ public class ReportsManagementController(
         return Ok(resource);
     }
     
-    [HttpGet("{kindOfReport}")]
-    public async Task<ActionResult> GetAllReportsByKindOfReport(string kindOfReport)
+    [HttpGet("Kind/{kindOfReport}")]
+    private async Task<ActionResult> GetAllReportsByKindOfReport(string kindOfReport)
     {
         var getAllReportsByKindOfReportQuery = new GetAllReportsByKindOfReportQuery(kindOfReport);
         var result = await reportManagementQueryService.Handle(getAllReportsByKindOfReportQuery);
@@ -45,7 +45,7 @@ public class ReportsManagementController(
     }
     
     
-    [HttpGet("{date}")]
+    [HttpGet("Date/{date}")]
     public  async Task<ActionResult> GetAllReportsByDate(string date)
     {
         var getAllReportsByDateQuery = new GetAllReportsByDateQuery(date);
@@ -53,7 +53,7 @@ public class ReportsManagementController(
         var resources = result.Select(ReportResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(resources);
     }
-    [HttpGet("{district}")]
+    [HttpGet("District/{district}")]
     public async Task<ActionResult> GetAllReportsByDistrict(string district)
     {
         var getAllReportsByDistrictQuery = new GetAllReportsByDistrictQuery(district);

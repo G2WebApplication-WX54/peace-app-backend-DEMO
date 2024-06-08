@@ -5,11 +5,11 @@ namespace PeaceApp.API.Report.Domain.Model.Aggregates;
 public partial class ReportManagement
 {
     public int Id { get; private set; }
-    public string KindOfReport { get; set; }
-    public string Date { get; set; }
-    public string District { get; set; }
-    public string Location { get; set; }
-    public string Description { get; set; }
+    public string KindOfReport { get; private set; }
+    public string Date { get; private set; }
+    public string District { get; private set; }
+    public string Location { get; private set; }
+    public string Description { get; private set; }
 
     protected ReportManagement()
     {
